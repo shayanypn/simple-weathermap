@@ -1,6 +1,13 @@
 {{yield}}
-<div class="list-group">
-	{{#each coordinates as |coordinate|}}
-		{{weather-item coordinate=coordinate }}
-	{{/each}}
+<div class="row">
+	{{weather-form onAddCity='onAdd' }}
+</div>
+<div class="row">
+	<div class="col">
+		<div class="list-group">
+			{{#each cities as |coordinate index|}}
+				{{weather-item index=index coordinate=coordinate }}
+			{{/each}}
+		</div>
+	</div>
 </div>

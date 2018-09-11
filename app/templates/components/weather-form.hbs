@@ -1,0 +1,28 @@
+{{yield}}
+<div class="col">
+	{{#if error}}
+		<div class="alert alert-danger alert-dismissible fade show" role="alert">
+			{{error}}
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+	{{/if}}
+	<form class="form-inline" {{action 'onSubmit' on="submit"}} >
+		<div class="form-group mb-2">
+			<label>Please Enter City Name:</label>
+		</div>
+		<div class="form-group mx-sm-3 mb-2">
+			<label class="sr-only">Password</label>
+			{{input
+				type="text"
+				class="form-control"
+				placeholder="City name"
+				value=city
+				}}
+		</div>
+			<button type="submit" class="btn btn-primary mb-2">
+				Check Weather
+			</button>
+	</form>
+</div>

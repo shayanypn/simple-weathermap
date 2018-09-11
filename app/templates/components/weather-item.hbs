@@ -2,7 +2,8 @@
 <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
 	<div class="d-flex w-100 justify-content-between">
 		<h5 class="mb-1">
-			District 4, Shiraz, Fars Province
+			{{index}} | 
+			{{data.city.name}}
 			{{#if data}}
 				<small>({{moment-from-now data.dt_txt}})</small>
 			{{/if}}

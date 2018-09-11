@@ -9,7 +9,7 @@ export default Route.extend({
 		*/
 		for (var i = 0; i < 10; i++) {
 			randomCoordinates.push({
-				lng: (Math.random()*360-180).toFixed(8),
+				lon: (Math.random()*360-180).toFixed(8),
 				lat: (Math.random()*180-90).toFixed(8)
 			});
 		}

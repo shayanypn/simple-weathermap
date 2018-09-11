@@ -7,11 +7,12 @@ export default Component.extend({
 	data: null,
 	willRender() {
 
-		if (this.get('data') === null ) {		
-			$.getJSON(`${Base}?lat=${this.coordinate.lat}&lon=${this.coordinate.lng}&APPID=${Token}`).then(data => {
-				if (data.list.length) {
-					console.log(data.list[0]);
-					this.set('data', data.list[0]);
+		if (this.get('data') === null ) {
+			$.getJSON(`${Base}?lat=${this.coordinate.lat}&lon=${this.coordinate.lon}&APPID=${Token}`).then(response => {
+				if (response.list.length) {
+					const data = response.list[0];
+					data.city = response.city;
+					this.set('data', data);
 				}
 			});
 		}
